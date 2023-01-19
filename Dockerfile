@@ -4,7 +4,9 @@ COPY ./ /tmp/code
 RUN cd /tmp/code && mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 
-FROM openjdk:1.8.0_242
+FROM java:8-jdk-alpine
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo "Asia/Shanghai" > /etc/localtime
 COPY --from=maven /tmp/code/target/*.jar /caiyun-webdav.jar
 EXPOSE 8080
 ENV JAVA_OPTS="-Xmx512m"
