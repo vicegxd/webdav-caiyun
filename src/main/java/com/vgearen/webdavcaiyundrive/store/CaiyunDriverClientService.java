@@ -51,7 +51,7 @@ public class CaiyunDriverClientService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CaiyunDriverClientService.class);
     private static ObjectMapper objectMapper = new ObjectMapper();
     private static String rootPath = "/";
-    private static int chunkSize = 10485760; // 100MB
+    private static int chunkSize = 5242880; // 5MB
     private CFile rootCFile = null;
 
     private static Cache<String, Set<CFile>> cFilesCache = Caffeine.newBuilder()
