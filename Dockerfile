@@ -4,7 +4,7 @@ COPY ./ /tmp/code
 RUN cd /tmp/code && mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 
-FROM java:8-jdk-alpine
+FROM openjdk:8-jdk-alpine
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timeZone
 COPY --from=maven /tmp/code/target/*.jar /caiyun-webdav.jar
