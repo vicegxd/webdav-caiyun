@@ -71,5 +71,5 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: |
-            vgearen/caiyun-webdav:latest
-            vgearen/caiyun-webdav:${{ steps.date.outputs.today }}
+            viceman2/caiyun-webdav:latest
+            viceman2/caiyun-webdav:${{ steps.date.outputs.today }}
