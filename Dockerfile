@@ -4,7 +4,7 @@ COPY ./ /tmp/code
 RUN cd /tmp/code && mvn clean package -Dmaven.test.skip=true -Dmaven.javadoc.skip=true
 
 
-FROM openjdk:11-jdk-oracle
+FROM openjdk:1.8.0_242
 COPY --from=maven /tmp/code/target/*.jar /caiyun-webdav.jar
 EXPOSE 8080
 ENV JAVA_OPTS="-Xmx512m"
